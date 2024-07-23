@@ -6,18 +6,18 @@ import java.awt.event.WindowEvent;
 
 public class Attendance_Register{
 
-    // Single counter for row updates
+    
     private static int currentRow = 1;  // Start from row 1
 
     public static void main(String[] args) {
-        // Create the frame
+        
         Frame frame = new Frame("AWT Table Example");
 
-        // Create a panel with GridLayout
+       
         Panel panel = new Panel();
         panel.setLayout(new GridLayout(100, 3));
 
-        // Add components to the panel (a 100x3 table)
+        
         Component[][] components = new Component[100][3];
         for (int row = 0; row < 100; row++) {
             for (int col = 0; col < 3; col++) {
@@ -44,14 +44,14 @@ public class Attendance_Register{
             }
         }
 
-        // Create a scroll pane and add the panel to it
+       
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.add(panel);
 
-        // Add the scroll pane to the frame
+     
         frame.add(scrollPane);
 
-        // Add action listeners to buttons
+       
         ((Button) components[0][1]).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (currentRow < 100) {  // Ensure we don't go out of bounds
@@ -78,11 +78,11 @@ public class Attendance_Register{
             }
         });
 
-        // Set the frame size and make it visible
+       
         frame.setSize(1000, 800);
         frame.setVisible(true);
 
-        // Add a window listener to close the frame
+
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent windowEvent) {
                 System.exit(0);
